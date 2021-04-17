@@ -1,7 +1,5 @@
-import Foundation
+import Components
 import UIKit
-
-protocol ComponentModel { }
 
 protocol TableViewDataSourceProtocol {
     var numberOfSections: Int { get }

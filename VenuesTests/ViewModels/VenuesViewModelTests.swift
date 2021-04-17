@@ -1,5 +1,6 @@
 import XCTest
 @testable import Venues
+@testable import Components
 
 final class VenuesViewModelTests: XCTestCase {
     var sut: VenuesViewModel!

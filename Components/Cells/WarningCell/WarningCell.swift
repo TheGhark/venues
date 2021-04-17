@@ -1,6 +1,6 @@
 import UIKit
 
-final class WarningCell: UITableViewCell {
+public final class WarningCell: UITableViewCell {
     // MARK: - Properties
 
     private var model: Model?
@@ -11,7 +11,7 @@ final class WarningCell: UITableViewCell {
         model?.type
     }
 
-    func update(with model: Model) {
+    public func update(with model: Model) {
         self.model = model
     }
 }

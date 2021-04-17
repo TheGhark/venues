@@ -1,4 +1,4 @@
-import UIKit
+import Components
 
 protocol VenuesModelFactoryProtocol {
     func warningModel(type: WarningCell.Model.WarningType) -> WarningCell.Model

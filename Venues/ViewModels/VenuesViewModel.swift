@@ -1,4 +1,4 @@
-import UIKit
+import Components
 
 protocol VenuesViewModelDelegate: class {
     func reload()
