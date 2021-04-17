@@ -20,8 +20,20 @@
 		7A9A0887262B190100E66262 /* PropertyListReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0886262B190100E66262 /* PropertyListReaderTests.swift */; };
 		7A9A0892262B30FE00E66262 /* VenuesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0891262B30FE00E66262 /* VenuesRepository.swift */; };
 		7A9A0899262B338200E66262 /* VenuesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0898262B338200E66262 /* VenuesRepositoryTests.swift */; };
-		7A9A08A0262B341700E66262 /* VenuesApiServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A089F262B341700E66262 /* VenuesApiServiceMock.swift */; };
+		7A9A08A0262B341700E66262 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A089F262B341700E66262 /* Mocks.swift */; };
 		7A9A0AE5262B3C3600E66262 /* VenueDto+Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0AE4262B3C3600E66262 /* VenueDto+Sample.swift */; };
+		7A9A0AEC262B3E4500E66262 /* VenuesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0AEB262B3E4500E66262 /* VenuesViewModel.swift */; };
+		7A9A0AF0262B3ECC00E66262 /* TableViewDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0AEF262B3ECC00E66262 /* TableViewDataSourceProtocol.swift */; };
+		7A9A0AF5262B3F7600E66262 /* VenueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0AF4262B3F7600E66262 /* VenueCell.swift */; };
+		7A9A0AF9262B3F9C00E66262 /* VenuCell+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0AF8262B3F9C00E66262 /* VenuCell+Model.swift */; };
+		7A9A0B0F262B471300E66262 /* VenuesModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0B0E262B471300E66262 /* VenuesModelFactory.swift */; };
+		7A9A0B13262B494600E66262 /* LifecycleObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0B12262B494600E66262 /* LifecycleObservable.swift */; };
+		7A9A0B18262B4E6E00E66262 /* VenuesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0B17262B4E6E00E66262 /* VenuesViewModelTests.swift */; };
+		7A9A0B24262B514700E66262 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0B23262B514700E66262 /* LoadingCell.swift */; };
+		7A9A0B2A262B515C00E66262 /* LoadingCell+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0B29262B515C00E66262 /* LoadingCell+Model.swift */; };
+		7A9A0B2E262B53A900E66262 /* Venue+Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0B2D262B53A900E66262 /* Venue+Sample.swift */; };
+		7A9A0B33262B577300E66262 /* WarningCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0B32262B577300E66262 /* WarningCell.swift */; };
+		7A9A0B39262B578500E66262 /* WarningCell+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0B38262B578500E66262 /* WarningCell+Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +66,20 @@
 		7A9A0886262B190100E66262 /* PropertyListReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListReaderTests.swift; sourceTree = "<group>"; };
 		7A9A0891262B30FE00E66262 /* VenuesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesRepository.swift; sourceTree = "<group>"; };
 		7A9A0898262B338200E66262 /* VenuesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesRepositoryTests.swift; sourceTree = "<group>"; };
-		7A9A089F262B341700E66262 /* VenuesApiServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesApiServiceMock.swift; sourceTree = "<group>"; };
+		7A9A089F262B341700E66262 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		7A9A0AE4262B3C3600E66262 /* VenueDto+Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VenueDto+Sample.swift"; sourceTree = "<group>"; };
+		7A9A0AEB262B3E4500E66262 /* VenuesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesViewModel.swift; sourceTree = "<group>"; };
+		7A9A0AEF262B3ECC00E66262 /* TableViewDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSourceProtocol.swift; sourceTree = "<group>"; };
+		7A9A0AF4262B3F7600E66262 /* VenueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueCell.swift; sourceTree = "<group>"; };
+		7A9A0AF8262B3F9C00E66262 /* VenuCell+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VenuCell+Model.swift"; sourceTree = "<group>"; };
+		7A9A0B0E262B471300E66262 /* VenuesModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesModelFactory.swift; sourceTree = "<group>"; };
+		7A9A0B12262B494600E66262 /* LifecycleObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifecycleObservable.swift; sourceTree = "<group>"; };
+		7A9A0B17262B4E6E00E66262 /* VenuesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesViewModelTests.swift; sourceTree = "<group>"; };
+		7A9A0B23262B514700E66262 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
+		7A9A0B29262B515C00E66262 /* LoadingCell+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoadingCell+Model.swift"; sourceTree = "<group>"; };
+		7A9A0B2D262B53A900E66262 /* Venue+Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Venue+Sample.swift"; sourceTree = "<group>"; };
+		7A9A0B32262B577300E66262 /* WarningCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningCell.swift; sourceTree = "<group>"; };
+		7A9A0B38262B578500E66262 /* WarningCell+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WarningCell+Model.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +122,8 @@
 		7A9A0828262B0D0D00E66262 /* Venues */ = {
 			isa = PBXGroup;
 			children = (
+				7A9A0AF3262B3F6B00E66262 /* Views */,
+				7A9A0AEA262B3E3A00E66262 /* ViewModels */,
 				7A9A0890262B30BC00E66262 /* BusinessLogic */,
 				7A9A087F262B15ED00E66262 /* Helpers */,
 				7A9A0879262B15B100E66262 /* Resources */,
@@ -114,6 +140,7 @@
 		7A9A083F262B0D0E00E66262 /* VenuesTests */ = {
 			isa = PBXGroup;
 			children = (
+				7A9A0B16262B4E5B00E66262 /* ViewModels */,
 				7A9A0AE3262B3C2C00E66262 /* Sample */,
 				7A9A089E262B340B00E66262 /* Mocks */,
 				7A9A0897262B337300E66262 /* BusinessLogic */,
@@ -163,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				7A9A0880262B15FB00E66262 /* PropertyListReader.swift */,
+				7A9A0AEF262B3ECC00E66262 /* TableViewDataSourceProtocol.swift */,
+				7A9A0B12262B494600E66262 /* LifecycleObservable.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -194,7 +223,7 @@
 		7A9A089E262B340B00E66262 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				7A9A089F262B341700E66262 /* VenuesApiServiceMock.swift */,
+				7A9A089F262B341700E66262 /* Mocks.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -203,8 +232,63 @@
 			isa = PBXGroup;
 			children = (
 				7A9A0AE4262B3C3600E66262 /* VenueDto+Sample.swift */,
+				7A9A0B2D262B53A900E66262 /* Venue+Sample.swift */,
 			);
 			path = Sample;
+			sourceTree = "<group>";
+		};
+		7A9A0AEA262B3E3A00E66262 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7A9A0AEB262B3E4500E66262 /* VenuesViewModel.swift */,
+				7A9A0B0E262B471300E66262 /* VenuesModelFactory.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7A9A0AF3262B3F6B00E66262 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7A9A0B31262B576A00E66262 /* WarningCell */,
+				7A9A0B22262B513F00E66262 /* LoadingCell */,
+				7A9A0B1F262B513800E66262 /* VenueCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7A9A0B16262B4E5B00E66262 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7A9A0B17262B4E6E00E66262 /* VenuesViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7A9A0B1F262B513800E66262 /* VenueCell */ = {
+			isa = PBXGroup;
+			children = (
+				7A9A0AF4262B3F7600E66262 /* VenueCell.swift */,
+				7A9A0AF8262B3F9C00E66262 /* VenuCell+Model.swift */,
+			);
+			path = VenueCell;
+			sourceTree = "<group>";
+		};
+		7A9A0B22262B513F00E66262 /* LoadingCell */ = {
+			isa = PBXGroup;
+			children = (
+				7A9A0B23262B514700E66262 /* LoadingCell.swift */,
+				7A9A0B29262B515C00E66262 /* LoadingCell+Model.swift */,
+			);
+			path = LoadingCell;
+			sourceTree = "<group>";
+		};
+		7A9A0B31262B576A00E66262 /* WarningCell */ = {
+			isa = PBXGroup;
+			children = (
+				7A9A0B32262B577300E66262 /* WarningCell.swift */,
+				7A9A0B38262B578500E66262 /* WarningCell+Model.swift */,
+			);
+			path = WarningCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,11 +393,21 @@
 			files = (
 				7A9A082E262B0D0D00E66262 /* ViewController.swift in Sources */,
 				7A9A0872262B0E7900E66262 /* Venue.swift in Sources */,
+				7A9A0B39262B578500E66262 /* WarningCell+Model.swift in Sources */,
+				7A9A0B33262B577300E66262 /* WarningCell.swift in Sources */,
+				7A9A0AEC262B3E4500E66262 /* VenuesViewModel.swift in Sources */,
+				7A9A0AF9262B3F9C00E66262 /* VenuCell+Model.swift in Sources */,
+				7A9A0B13262B494600E66262 /* LifecycleObservable.swift in Sources */,
 				7A9A082A262B0D0D00E66262 /* AppDelegate.swift in Sources */,
 				7A9A0881262B15FB00E66262 /* PropertyListReader.swift in Sources */,
+				7A9A0AF0262B3ECC00E66262 /* TableViewDataSourceProtocol.swift in Sources */,
+				7A9A0B2A262B515C00E66262 /* LoadingCell+Model.swift in Sources */,
 				7A9A0867262B0DE300E66262 /* VenuesApiService.swift in Sources */,
+				7A9A0B24262B514700E66262 /* LoadingCell.swift in Sources */,
+				7A9A0B0F262B471300E66262 /* VenuesModelFactory.swift in Sources */,
 				7A9A0892262B30FE00E66262 /* VenuesRepository.swift in Sources */,
 				7A9A086D262B0E2000E66262 /* VenueDto.swift in Sources */,
+				7A9A0AF5262B3F7600E66262 /* VenueCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,8 +415,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A9A0B18262B4E6E00E66262 /* VenuesViewModelTests.swift in Sources */,
 				7A9A0AE5262B3C3600E66262 /* VenueDto+Sample.swift in Sources */,
-				7A9A08A0262B341700E66262 /* VenuesApiServiceMock.swift in Sources */,
+				7A9A08A0262B341700E66262 /* Mocks.swift in Sources */,
+				7A9A0B2E262B53A900E66262 /* Venue+Sample.swift in Sources */,
 				7A9A0841262B0D0E00E66262 /* VenuesTests.swift in Sources */,
 				7A9A0899262B338200E66262 /* VenuesRepositoryTests.swift in Sources */,
 				7A9A0887262B190100E66262 /* PropertyListReaderTests.swift in Sources */,

@@ -28,3 +28,10 @@ final class VenuesApiServiceMock: VenuesApiServiceProtocol {
         fetchVenuesMockFunc.callAndReturn((), completion: completion)
     }
 }
+
+final class VenuesRepositoryMock: VenuesRepositoryProtocol {
+    var fetchVenuesMockFunc = MockFunc<(), (Result<[Venue], Error>)>()
+    func fetchVenues(completion: @escaping (Result<[Venue], Error>) -> Void) {
+        fetchVenuesMockFunc.callAndReturn((), completion: completion)
+    }
+}

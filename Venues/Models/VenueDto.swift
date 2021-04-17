@@ -4,6 +4,7 @@ struct VenueDto: Decodable {
     let imageUrl: String
     let cost: String
     let location: String
+    let name: String
     let startTime: String
     let endTime: String
 
@@ -11,6 +12,7 @@ struct VenueDto: Decodable {
         case imageUrl
         case cost
         case location
+        case name = "venue"
         case startTime = "start_time"
         case endTime = "end_time"
     }
@@ -24,6 +26,7 @@ extension VenueDto {
             imageUrl: URL(string: imageUrl),
             cost: cost,
             location: location,
+            name: name,
             startTime: dateFormatter.date(from: startTime),
             endTime: dateFormatter.date(from: endTime)
         )

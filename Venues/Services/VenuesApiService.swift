@@ -8,6 +8,7 @@ final class VenuesApiService {
     enum Error: Swift.Error {
         case invalidUrl
         case noData
+        case noConnection
     }
     // MARK: - Properties
 
