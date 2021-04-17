@@ -17,22 +17,15 @@ struct VenueDto: Decodable {
 }
 
 extension VenueDto {
-    func toDomain() -> Venue? {
+    func toDomain() -> Venue {
         let dateFormatter = DateFormatter()
-        guard
-            let imageUrl = URL(string: imageUrl),
-            let startTime = dateFormatter.date(from: startTime),
-            let endTime = dateFormatter.date(from: endTime)
-        else {
-            return nil
-        }
-        
+        dateFormatter.dateStyle = .short
         return .init(
-            imageUrl: imageUrl,
+            imageUrl: URL(string: imageUrl),
             cost: cost,
             location: location,
-            startTime: startTime,
-            endTime: endTime
+            startTime: dateFormatter.date(from: startTime),
+            endTime: dateFormatter.date(from: endTime)
         )
     }
 }

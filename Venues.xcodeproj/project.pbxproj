@@ -18,6 +18,10 @@
 		7A9A087B262B15CC00E66262 /* Credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A9A087A262B15CC00E66262 /* Credentials.plist */; };
 		7A9A0881262B15FB00E66262 /* PropertyListReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0880262B15FB00E66262 /* PropertyListReader.swift */; };
 		7A9A0887262B190100E66262 /* PropertyListReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0886262B190100E66262 /* PropertyListReaderTests.swift */; };
+		7A9A0892262B30FE00E66262 /* VenuesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0891262B30FE00E66262 /* VenuesRepository.swift */; };
+		7A9A0899262B338200E66262 /* VenuesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0898262B338200E66262 /* VenuesRepositoryTests.swift */; };
+		7A9A08A0262B341700E66262 /* VenuesApiServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A089F262B341700E66262 /* VenuesApiServiceMock.swift */; };
+		7A9A0AE5262B3C3600E66262 /* VenueDto+Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0AE4262B3C3600E66262 /* VenueDto+Sample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,10 @@
 		7A9A087A262B15CC00E66262 /* Credentials.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Credentials.plist; sourceTree = "<group>"; };
 		7A9A0880262B15FB00E66262 /* PropertyListReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListReader.swift; sourceTree = "<group>"; };
 		7A9A0886262B190100E66262 /* PropertyListReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListReaderTests.swift; sourceTree = "<group>"; };
+		7A9A0891262B30FE00E66262 /* VenuesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesRepository.swift; sourceTree = "<group>"; };
+		7A9A0898262B338200E66262 /* VenuesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesRepositoryTests.swift; sourceTree = "<group>"; };
+		7A9A089F262B341700E66262 /* VenuesApiServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesApiServiceMock.swift; sourceTree = "<group>"; };
+		7A9A0AE4262B3C3600E66262 /* VenueDto+Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VenueDto+Sample.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,9 @@
 		7A9A083F262B0D0E00E66262 /* VenuesTests */ = {
 			isa = PBXGroup;
 			children = (
+				7A9A0AE3262B3C2C00E66262 /* Sample */,
+				7A9A089E262B340B00E66262 /* Mocks */,
+				7A9A0897262B337300E66262 /* BusinessLogic */,
 				7A9A0885262B18F400E66262 /* Helpers */,
 				7A9A0840262B0D0E00E66262 /* VenuesTests.swift */,
 				7A9A0842262B0D0E00E66262 /* Info.plist */,
@@ -167,8 +178,33 @@
 		7A9A0890262B30BC00E66262 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				7A9A0891262B30FE00E66262 /* VenuesRepository.swift */,
 			);
 			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		7A9A0897262B337300E66262 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				7A9A0898262B338200E66262 /* VenuesRepositoryTests.swift */,
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		7A9A089E262B340B00E66262 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				7A9A089F262B341700E66262 /* VenuesApiServiceMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		7A9A0AE3262B3C2C00E66262 /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				7A9A0AE4262B3C3600E66262 /* VenueDto+Sample.swift */,
+			);
+			path = Sample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +312,7 @@
 				7A9A082A262B0D0D00E66262 /* AppDelegate.swift in Sources */,
 				7A9A0881262B15FB00E66262 /* PropertyListReader.swift in Sources */,
 				7A9A0867262B0DE300E66262 /* VenuesApiService.swift in Sources */,
+				7A9A0892262B30FE00E66262 /* VenuesRepository.swift in Sources */,
 				7A9A086D262B0E2000E66262 /* VenueDto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,7 +321,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A9A0AE5262B3C3600E66262 /* VenueDto+Sample.swift in Sources */,
+				7A9A08A0262B341700E66262 /* VenuesApiServiceMock.swift in Sources */,
 				7A9A0841262B0D0E00E66262 /* VenuesTests.swift in Sources */,
+				7A9A0899262B338200E66262 /* VenuesRepositoryTests.swift in Sources */,
 				7A9A0887262B190100E66262 /* PropertyListReaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
