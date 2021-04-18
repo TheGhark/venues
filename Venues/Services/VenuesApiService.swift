@@ -44,7 +44,11 @@ extension VenuesApiService: VenuesApiServiceProtocol {
         request.addValue(secretKey, forHTTPHeaderField: "secret-key")
         let task = session.dataTask(with: request) { (data, response, error) in
             if let error = error {
-                completion(.failure(error))
+                if (error as NSError).code == -1009 {
+                    completion(.failure(Error.noConnection))
+                } else {
+                    completion(.failure(error))
+                }
             } else if let data = data {
                 do {
                     let venues = try self.decoder.decode([VenueDto].self, from: data)
