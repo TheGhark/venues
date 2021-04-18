@@ -3,9 +3,9 @@ import UIKit
 public extension WarningCell {
     struct Model: ComponentModel {
         public let type: WarningType
-        let title: String
-        let subtitle: String
-        let buttonModel: Button.Model?
+        public let title: String
+        public let subtitle: String
+        public let buttonModel: Button.Model?
 
         public init(
             type: WarningType,

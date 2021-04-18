@@ -31,41 +31,11 @@ private extension VenuesModelFactory {
 
     func date(from start: Date?) -> String {
         guard let start = start else { return "" }
-        dateFormatter.dateStyle = .short
+        dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .none
         return dateFormatter.string(from: start)
     }
-}
 
-extension VenuesModelFactory: VenuesModelFactoryProtocol {
-    func warningModel(
-        type: WarningCell.Model.WarningType,
-        action: (() -> Void)?
-    ) -> WarningCell.Model {
-        let info = warningInfo(with: type)
-        return .init(
-            type: type,
-            title: info.title,
-            subtitle: info.subtitle,
-            buttonModel: buttonModel(with: type, action: action)
-        )
-    }
-    
-    func loadingModel() -> LoadingCell.Model {
-        .init(icon: Icon.camera)
-    }
-    
-    func venueModel(with venue: Venue) -> VenueCell.Model {
-        .init(
-            imageDownloader: ImageDownloader(url: venue.imageUrl),
-            cost: venue.cost,
-            location: venue.location,
-            date: date(from: venue.startTime),
-            venue: venue.name,
-            timeslot: timeslot(from: venue.startTime, to: venue.endTime)
-        )
-    }
-    
     func warningInfo(with type: WarningCell.Model.WarningType) -> (title: String, subtitle: String) {
         switch type {
         case .empty:
@@ -96,5 +66,35 @@ extension VenuesModelFactory: VenuesModelFactoryProtocol {
         case .empty:
             return nil
         }
+    }
+}
+
+extension VenuesModelFactory: VenuesModelFactoryProtocol {
+    func warningModel(
+        type: WarningCell.Model.WarningType,
+        action: (() -> Void)?
+    ) -> WarningCell.Model {
+        let info = warningInfo(with: type)
+        return .init(
+            type: type,
+            title: info.title,
+            subtitle: info.subtitle,
+            buttonModel: buttonModel(with: type, action: action)
+        )
+    }
+    
+    func loadingModel() -> LoadingCell.Model {
+        .init(icon: Icon.camera)
+    }
+    
+    func venueModel(with venue: Venue) -> VenueCell.Model {
+        .init(
+            imageDownloader: ImageDownloader(url: venue.imageUrl),
+            cost: venue.cost,
+            location: venue.location,
+            date: date(from: venue.startTime),
+            venue: venue.name,
+            timeslot: timeslot(from: venue.startTime, to: venue.endTime)
+        )
     }
 }
