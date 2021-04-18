@@ -5,10 +5,10 @@ import XCTest
 final class VenuesViewModelTests: XCTestCase {
     var sut: VenuesViewModel!
     var venuesRepository: VenuesRepositoryMock!
-    var tableView: UITableView!
 
     var reloadCalledCount: Int = 0
     var reloadHandler: (() throws -> Void)?
+    var selectedTab: TabBarButton.Model?
     
     override func setUp() {
         super.setUp()
@@ -119,6 +119,18 @@ final class VenuesViewModelTests: XCTestCase {
                 }
             }
     }
+
+    func test_select_upcoming() {
+        assert(selectTab: Localization.Tabbar.Button.upcoming)
+    }
+
+    func test_select_archived() {
+        assert(selectTab: Localization.Tabbar.Button.archived)
+    }
+
+    func test_select_options() {
+        assert(selectTab: Localization.Tabbar.Button.options)
+    }
 }
 
 private extension VenuesViewModelTests {
@@ -164,6 +176,19 @@ private extension VenuesViewModelTests {
         sut.didChange(state: .willAppear)
         wait(for: [expectation], timeout: 0.1)
     }
+
+    func assert(
+        selectTab title: String,
+        line: UInt = #line
+    ) {
+        venuesRepository.fetchVenuesMockFunc.returns(.success([]))
+        sut.didChange(state: .didLoad)
+        if let model = sut.tabBarModel.buttons.first(where: { $0.title == title }) {
+            model.action(model)
+            XCTAssertEqual(selectedTab, model, line: line)
+            XCTAssert(selectedTab?.selected == true, line: line)
+        }
+    }
 }
 
 extension VenuesViewModelTests: VenuesViewModelDelegate {
@@ -174,5 +199,9 @@ extension VenuesViewModelTests: VenuesViewModelDelegate {
         } catch {
             fatalError("`reloadHandler` must never fail")
         }
+    }
+
+    func select(tab: TabBarButton.Model?) {
+        selectedTab = tab
     }
 }

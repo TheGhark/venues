@@ -36,6 +36,6 @@ enum Localization {
 
 private extension Localization {
     static func localized(_ key: String) -> String {
-        NSLocalizedString(key, comment: "")
+        NSLocalizedString(key, tableName: "Localization", bundle: .main, value: "", comment: "")
     }
 }

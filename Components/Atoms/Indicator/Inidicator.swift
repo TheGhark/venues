@@ -13,10 +13,6 @@ final class Indicator: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    override var intrinsicContentSize: CGSize {
-        .init(width: 24, height: 2)
-    }
 }
 
 private extension Indicator {
@@ -30,9 +26,11 @@ private extension Indicator {
     }
 
     func setupConstraints() {
-        view.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        view.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         view.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        view.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        view.heightAnchor.constraint(equalToConstant: 2).isActive = true
+        view.widthAnchor.constraint(equalToConstant: 24).isActive = true
     }
 }

@@ -1,3 +1,5 @@
+import Foundation
+
 protocol VenuesRepositoryProtocol {
     func fetchVenues(completion: @escaping (Result<[Venue], Error>) -> Void)
 }
@@ -17,11 +19,13 @@ final class VenuesRepository {
 extension VenuesRepository: VenuesRepositoryProtocol {
     func fetchVenues(completion: @escaping (Result<[Venue], Error>) -> Void) {
         service.fetchVenues { result in
-            completion(
-                result.map { dtos in
-                    dtos.compactMap { $0.toDomain() }
-                }
-            )
+            DispatchQueue.main.async {
+                completion(
+                    result.map { dtos in
+                        dtos.compactMap { $0.toDomain() }
+                    }
+                )
+            }
         }
     }
 }

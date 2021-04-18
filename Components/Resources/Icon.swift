@@ -7,7 +7,7 @@ public enum Icon {
     case list
     case offline
 
-    var image: UIImage? {
+    public var image: UIImage? {
         switch self {
         case .camera:
             return UIImage(named: "icn_camera")

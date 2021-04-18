@@ -1,6 +1,7 @@
 import Components
 
 protocol VenuesViewModelDelegate: class {
+    func select(tab: TabBarButton.Model?)
     func reload()
 }
 
@@ -14,6 +15,8 @@ final class VenuesViewModel {
     // MARK: - Properties
 
     weak var delegate: VenuesViewModelDelegate?
+    private var selectedTabIndex: Int = 0
+    private(set) var tabBarModel: TabBar.Model = .init(buttons: [])
     private var sections: [Section] = []
     private let venuesRepository: VenuesRepositoryProtocol
     private let modelFactory: VenuesModelFactoryProtocol
@@ -30,6 +33,35 @@ final class VenuesViewModel {
 }
 
 private extension VenuesViewModel {
+    func createTabBarModels() {
+        tabBarModel =
+            .init(
+                buttons: [
+                    .init(
+                        title: Localization.Tabbar.Button.upcoming,
+                        selected: isTabSelected(index: 0)
+                    ) { [weak self] model in
+                        self?.select(tab: 0)
+                        self?.fetch()
+                    },
+                    .init(
+                        title: Localization.Tabbar.Button.archived,
+                        selected: isTabSelected(index: 1)
+                    ) {[weak self] model in
+                        self?.select(tab: 1)
+                        self?.delegate?.reload()
+                    },
+                    .init(
+                        title: Localization.Tabbar.Button.options,
+                        selected: isTabSelected(index: 2)
+                    ) { [weak self] model in
+                        self?.select(tab: 2)
+                        self?.delegate?.reload()
+                    }
+                ]
+            )
+    }
+
     func createSections(with venues: [Venue]) {
         defer {
             delegate?.reload()
@@ -91,6 +123,16 @@ private extension VenuesViewModel {
             }
         }
     }
+
+    func select(tab index: Int) {
+        selectedTabIndex = index
+        createTabBarModels()
+        delegate?.select(tab: tabBarModel.buttons[index])
+    }
+
+    func isTabSelected(index: Int) -> Bool {
+        selectedTabIndex == index
+    }
 }
 
 // MARK: - TableViewDataSourceProtocol
@@ -131,6 +173,7 @@ extension VenuesViewModel: LifecycleStateObservable {
     func didChange(state: LifecycleState) {
         switch state {
         case .didLoad:
+            createTabBarModels()
             sections = [
                 .loading(
                     models: [

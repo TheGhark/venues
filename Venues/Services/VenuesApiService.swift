@@ -19,7 +19,7 @@ final class VenuesApiService {
     // MARK: - Initialization
 
     init(
-        session: URLSession = .init(),
+        session: URLSession = .shared,
         decoder: JSONDecoder = .init(),
         propertyListReader: PropertyListReaderProtocol = PropertyListReader(filename: "Credentials")
     ) {
@@ -42,7 +42,7 @@ extension VenuesApiService: VenuesApiServiceProtocol {
 
         var request = URLRequest(url: url)
         request.addValue(secretKey, forHTTPHeaderField: "secret-key")
-        session.dataTask(with: request) { (data, response, error) in
+        let task = session.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
             } else if let data = data {
@@ -56,5 +56,6 @@ extension VenuesApiService: VenuesApiServiceProtocol {
                 completion(.failure(Error.noData))
             }
         }
+        task.resume()
     }
 }
