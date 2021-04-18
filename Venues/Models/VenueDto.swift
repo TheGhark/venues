@@ -1,15 +1,15 @@
 import Foundation
 
 struct VenueDto: Decodable {
-    let imageUrl: String
-    let cost: String
-    let location: String
-    let name: String
-    let startTime: String
-    let endTime: String
+    let imageUrl: String?
+    let cost: String?
+    let location: String?
+    let name: String?
+    let startTime: String?
+    let endTime: String?
 
     enum CodingKeys: String, CodingKey {
-        case imageUrl
+        case imageUrl = "image_url"
         case cost
         case location
         case name = "venue"
@@ -19,11 +19,20 @@ struct VenueDto: Decodable {
 }
 
 extension VenueDto {
-    func toDomain() -> Venue {
+    func toDomain() -> Venue? {
+        guard
+            let cost = cost,
+            let location = location,
+            let name = name,
+            let startTime = startTime,
+            let endTime = endTime
+        else {
+            return nil
+        }
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
+        dateFormatter.dateFormat = "YYYY-MM-DD'T'HH:mm:ssZ"
         return .init(
-            imageUrl: URL(string: imageUrl),
+            imageUrl: URL(string: imageUrl ?? ""),
             cost: cost,
             location: location,
             date: dateFormatter.date(from: startTime),

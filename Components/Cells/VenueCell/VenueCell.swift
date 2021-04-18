@@ -3,6 +3,7 @@ import UIKit
 public final class VenueCell: UITableViewCell {
     // MARK: - Properties
 
+    private let content = UIView()
     private let backgroundImageView = UIImageView()
     private let badge = Badge()
     private let name = UILabel()
@@ -36,65 +37,75 @@ public final class VenueCell: UITableViewCell {
         if backgroundImageView.image == nil {
             backgroundImageView.backgroundColor = Color.greyBackground
         }
+    }
 
-        model.imageDownloader.download { [weak self] image in
-            self?.backgroundImageView.image = image
-        }
+    public func update(image: UIImage?) {
+        backgroundImageView.image = image
     }
 }
 
 private extension VenueCell {
     func setupViews() {
         name.font =  Font.medium.size(17)
-        name.textColor = Color.foreground
+        name.textColor = .white
 
         date.font =  Font.medium.size(17)
-        date.textColor = Color.foreground
+        date.textColor = .white
 
         name.font =  Font.regular.size(17)
-        location.textColor = Color.lightGrey
+        location.textColor = Color.silver
 
         time.font =  Font.regular.size(17)
-        time.textColor = Color.lightGrey
+        time.textColor = Color.silver
 
         nameDateStackView.axis = .horizontal
         nameDateStackView.spacing = 0
-        nameDateStackView.distribution = .fillEqually
+        nameDateStackView.distribution = .fill
 
         locationTimeStackView.axis = .horizontal
         locationTimeStackView.spacing = 0
-        locationTimeStackView.distribution = .fillEqually
+        locationTimeStackView.distribution = .fill
     }
 
     func setupHierarchy() {
-        addSubview(backgroundImageView)
-        backgroundImageView.addSubview(badge)
+        addSubview(content)
+        content.addSubview(backgroundImageView)
+        content.addSubview(badge)
         nameDateStackView.addArrangedSubview(name)
         nameDateStackView.addArrangedSubview(date)
-        backgroundImageView.addSubview(nameDateStackView)
+        content.addSubview(nameDateStackView)
         locationTimeStackView.addArrangedSubview(location)
         locationTimeStackView.addArrangedSubview(time)
-        backgroundImageView.addSubview(locationTimeStackView)
-        backgroundImageView.addSubview(separator)
+        content.addSubview(locationTimeStackView)
+        content.addSubview(separator)
     }
 
     func setupConstraints() {
-        backgroundImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 12).isActive = true
-        backgroundImageView.topAnchor.constraint(equalTo: topAnchor, constant: 16).isActive = true
-        backgroundImageView.rightAnchor.constraint(equalTo: rightAnchor, constant: 12).isActive = true
-        backgroundImageView.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
+        content.translatesAutoresizingMaskIntoConstraints = false
+        content.heightAnchor.constraint(equalToConstant: 210).isActive = true
+        content.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        content.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        content.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        content.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).isActive = true
+
+        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundImageView.leftAnchor.constraint(equalTo: content.leftAnchor).isActive = true
+        backgroundImageView.topAnchor.constraint(equalTo: content.topAnchor).isActive = true
+        backgroundImageView.rightAnchor.constraint(equalTo: content.rightAnchor).isActive = true
+        backgroundImageView.bottomAnchor.constraint(equalTo: content.bottomAnchor).isActive = true
         
-        badge.leftAnchor.constraint(equalTo: leftAnchor, constant: 12).isActive = true
-        badge.topAnchor.constraint(equalTo: topAnchor, constant: 12).isActive = true
+        badge.translatesAutoresizingMaskIntoConstraints = false
+        badge.leftAnchor.constraint(equalTo: content.leftAnchor, constant: 12).isActive = true
+        badge.topAnchor.constraint(equalTo: content.topAnchor, constant: 12).isActive = true
 
-        locationTimeStackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
-        locationTimeStackView.rightAnchor.constraint(equalTo: rightAnchor, constant: 16).isActive = true
-        locationTimeStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 12).isActive = true
-        locationTimeStackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        locationTimeStackView.translatesAutoresizingMaskIntoConstraints = false
+        locationTimeStackView.leftAnchor.constraint(equalTo: content.leftAnchor, constant: 16).isActive = true
+        locationTimeStackView.rightAnchor.constraint(equalTo: content.rightAnchor, constant: -16).isActive = true
+        locationTimeStackView.bottomAnchor.constraint(equalTo: content.bottomAnchor, constant: -12).isActive = true
 
+        nameDateStackView.translatesAutoresizingMaskIntoConstraints = false
         nameDateStackView.bottomAnchor.constraint(equalTo: locationTimeStackView.topAnchor).isActive = true
         nameDateStackView.leftAnchor.constraint(equalTo: locationTimeStackView.leftAnchor).isActive = true
         nameDateStackView.rightAnchor.constraint(equalTo: locationTimeStackView.rightAnchor).isActive = true
-        nameDateStackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
 }

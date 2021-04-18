@@ -29,6 +29,7 @@ private extension Block {
     }
 
     func setupConstraints() {
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         view.topAnchor.constraint(equalTo: topAnchor).isActive = true
         view.rightAnchor.constraint(equalTo: rightAnchor).isActive = true

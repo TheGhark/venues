@@ -9,6 +9,7 @@ public enum Color {
     public static let lightGrey = UIColor(named: "LightGrey",  in: .components, compatibleWith: nil)
     public static let navigationBar = UIColor(named: "NavigationBar",  in: .components, compatibleWith: nil)
     public static let orange = UIColor(named: "Orange",  in: .components, compatibleWith: nil)
+    public static let silver = UIColor(named: "Silver",  in: .components, compatibleWith: nil)
     public static let translucentBlack72 = UIColor(named: "TranslucentBlack72",  in: .components, compatibleWith: nil)
     public static let translucentWhite72 = UIColor(named: "TranslucentWhite72",  in: .components, compatibleWith: nil)
 }

@@ -7,11 +7,16 @@ final class VenuesViewController: UIViewController {
     private let tabBar = TabBar()
     private let tableView = UITableView()
     private let viewModel: VenuesViewModel
+    private let imageDownloader: ImageDownloaderProtocol
 
     // MARK: - Initialization
 
-    init(viewModel: VenuesViewModel = .init()) {
+    init(
+        viewModel: VenuesViewModel = .init(),
+        imageDownloader: ImageDownloaderProtocol = ImageDownloader()
+    ) {
         self.viewModel = viewModel
+        self.imageDownloader = imageDownloader
         super.init(nibName: nil, bundle: nil)
         viewModel.delegate = self
     }
@@ -57,7 +62,7 @@ private extension VenuesViewController {
     // MARK: - Private
     
     func setupViews() {
-        view.backgroundColor = Color.foreground
+        view.backgroundColor = Color.background
 
         tableView.showsVerticalScrollIndicator = false
         tableView.alwaysBounceVertical = true
@@ -81,6 +86,13 @@ private extension VenuesViewController {
         tabBar.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tabBar.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         tabBar.heightAnchor.constraint(equalToConstant: 40).isActive = true
+
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 12).isActive = true
+        tableView.topAnchor.constraint(equalTo: tabBar.bottomAnchor).isActive = true
+        tableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -12).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        tableView.separatorStyle = .none
     }
     
     func bindViewModel() {
@@ -135,7 +147,19 @@ extension VenuesViewController: UITableViewDataSource {
 }
 
 extension VenuesViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard
+            let cell = cell as? VenueCell,
+            let model = viewModel.model(at: indexPath) as? VenueCell.Model
+        else {
+            return
+        }
+        imageDownloader.download(url: model.imageUrl) { url, image in
+            if model.imageUrl == url {
+                cell.update(image: image)
+            }
+        }
+    }
 }
 
 extension VenuesViewController: VenuesViewModelDelegate {

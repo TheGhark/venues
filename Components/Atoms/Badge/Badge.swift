@@ -35,9 +35,10 @@ private extension Badge {
     }
 
     func setupConstraints() {
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.leftAnchor.constraint(equalTo: leftAnchor, constant: 8).isActive = true
         label.topAnchor.constraint(equalTo: topAnchor, constant: 4).isActive = true
-        label.rightAnchor.constraint(equalTo: rightAnchor, constant: 8).isActive = true
-        label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 8).isActive = true
+        label.rightAnchor.constraint(equalTo: rightAnchor, constant: -8).isActive = true
+        label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4).isActive = true
     }
 }

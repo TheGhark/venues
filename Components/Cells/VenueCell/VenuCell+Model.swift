@@ -2,7 +2,7 @@ import Foundation
 
 public extension VenueCell {
     struct Model: ComponentModel {
-        public let imageDownloader: ImageDownloaderProtocol
+        public let imageUrl: URL?
         public let cost: String
         public let location: String
         public let date: String
@@ -10,14 +10,14 @@ public extension VenueCell {
         public let timeslot: String
 
         public init(
-            imageDownloader: ImageDownloaderProtocol,
+            imageUrl: URL?,
             cost: String,
             location: String,
             date: String,
             venue: String,
             timeslot: String
         ) {
-            self.imageDownloader = imageDownloader
+            self.imageUrl = imageUrl
             self.cost = cost
             self.location = location
             self.date = date

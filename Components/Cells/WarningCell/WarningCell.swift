@@ -36,6 +36,8 @@ public final class WarningCell: UITableViewCell {
 
     public func update(with model: Model) {
         icon.image = model.type.image
+        icon.tintColor = Color.grey
+
         title.text = model.title
         subtitle.text = model.subtitle
 
@@ -58,9 +60,13 @@ private extension WarningCell {
 
         title.textColor = Color.greyForeground
         title.font = Font.medium.size(17)
+        title.numberOfLines = 0
+        title.textAlignment = .center
 
         subtitle.textColor = Color.greyForeground
         subtitle.font = Font.regular.size(16)
+        subtitle.numberOfLines = 0
+        subtitle.textAlignment = .center
     }
 
     func setupHierarchy() {
@@ -74,19 +80,27 @@ private extension WarningCell {
     }
 
     func setupConstraints() {
+        content.translatesAutoresizingMaskIntoConstraints = false
         content.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         content.topAnchor.constraint(equalTo: topAnchor).isActive = true
         content.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         content.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
 
+        title.translatesAutoresizingMaskIntoConstraints = false
+        subtitle.translatesAutoresizingMaskIntoConstraints = false
+        button.translatesAutoresizingMaskIntoConstraints = false
+
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.leftAnchor.constraint(equalTo: content.leftAnchor, constant: 24).isActive = true
         stackView.topAnchor.constraint(equalTo: content.topAnchor, constant: 48).isActive = true
-        stackView.rightAnchor.constraint(equalTo: content.rightAnchor, constant: 24).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: content.bottomAnchor, constant: 56).isActive = true
+        stackView.rightAnchor.constraint(equalTo: content.rightAnchor, constant: -24).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: content.bottomAnchor, constant: -56).isActive = true
 
+        icon.translatesAutoresizingMaskIntoConstraints = false
         icon.widthAnchor.constraint(equalToConstant: 40).isActive = true
         icon.heightAnchor.constraint(equalToConstant: 39).isActive = true
         icon.topAnchor.constraint(equalTo: iconContainer.topAnchor).isActive = true
         icon.bottomAnchor.constraint(equalTo: iconContainer.bottomAnchor, constant: -20).isActive = true
+        icon.centerXAnchor.constraint(equalTo: iconContainer.centerXAnchor).isActive = true
     }
 }

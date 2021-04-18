@@ -26,7 +26,7 @@ private extension VenuesModelFactory {
         }
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
-        return "\(dateFormatter.string(from: start)) - \(dateFormatter.string(from: end))"
+        return "\(dateFormatter.string(from: start)) — \(dateFormatter.string(from: end))"
     }
 
     func date(from start: Date?) -> String {
@@ -89,7 +89,7 @@ extension VenuesModelFactory: VenuesModelFactoryProtocol {
     
     func venueModel(with venue: Venue) -> VenueCell.Model {
         .init(
-            imageDownloader: ImageDownloader(url: venue.imageUrl),
+            imageUrl: venue.imageUrl,
             cost: venue.cost,
             location: venue.location,
             date: date(from: venue.startTime),
