@@ -3,7 +3,7 @@ import UIKit
 public final class LoadingCell: UITableViewCell {
     // MARK: - Properties
 
-    private let cameraImageView = UIImageView()
+    private let placeholderImageView = UIImageView()
     private let longBlock = Block()
     private let shortBlock = Block()
 
@@ -21,7 +21,7 @@ public final class LoadingCell: UITableViewCell {
     // MARK: - Public
 
     public func update(with model: Model) {
-        cameraImageView.image = model.icon.image
+        placeholderImageView.image = model.icon.image
     }
 }
 
@@ -31,16 +31,16 @@ private extension LoadingCell {
     }
 
     func setupHierarchy() {
-        addSubview(cameraImageView)
+        addSubview(placeholderImageView)
         addSubview(longBlock)
         addSubview(shortBlock)
     }
 
     func setupConstraints() {
-        cameraImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 28).isActive = true
-        cameraImageView.topAnchor.constraint(equalTo: topAnchor, constant: 30).isActive = true
-        cameraImageView.heightAnchor.constraint(equalToConstant: 36).isActive = true
-        cameraImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        placeholderImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 28).isActive = true
+        placeholderImageView.topAnchor.constraint(equalTo: topAnchor, constant: 30).isActive = true
+        placeholderImageView.heightAnchor.constraint(equalToConstant: 36).isActive = true
+        placeholderImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
 
         shortBlock.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
         shortBlock.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 16).isActive = true

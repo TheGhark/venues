@@ -5,13 +5,88 @@ public final class WarningCell: UITableViewCell {
 
     private var model: Model?
 
-    // MARK: - Computed Properties
+    private let content = UIView()
+    private let stackView = UIStackView()
+    private let icon = UIImageView()
+    private let iconContainer = UIView()
+    private let title = UILabel()
+    private let subtitle = UILabel()
+    private let button = Button()
 
-    var type: Model.WarningType? {
+    // MARK: - Computed Properties
+    
+    public var type: Model.WarningType? {
         model?.type
     }
 
+    // MARK: - Initialization
+
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupViews()
+        setupHierarchy()
+        setupConstraints()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - Public
+
     public func update(with model: Model) {
-        self.model = model
+        icon.image = model.type.image
+        title.text = model.title
+        subtitle.text = model.subtitle
+
+        if let buttonModel = model.buttonModel {
+            button.isHidden = false
+            button.update(with: buttonModel)
+        } else {
+            button.isHidden = true
+        }
+    }
+}
+
+private extension WarningCell {
+    func setupViews() {
+        backgroundColor = Color.background
+
+        stackView.axis = .vertical
+        stackView.spacing = 8
+        stackView.distribution = .fill
+
+        title.textColor = Color.greyForeground
+        title.font = Font.medium.size(17)
+
+        subtitle.textColor = Color.greyForeground
+        subtitle.font = Font.regular.size(16)
+    }
+
+    func setupHierarchy() {
+        iconContainer.addSubview(icon)
+        stackView.addArrangedSubview(iconContainer)
+        stackView.addArrangedSubview(title)
+        stackView.addArrangedSubview(subtitle)
+        stackView.addArrangedSubview(button)
+        content.addSubview(stackView)
+        addSubview(content)
+    }
+
+    func setupConstraints() {
+        content.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        content.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        content.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        content.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+
+        stackView.leftAnchor.constraint(equalTo: content.leftAnchor, constant: 24).isActive = true
+        stackView.topAnchor.constraint(equalTo: content.topAnchor, constant: 48).isActive = true
+        stackView.rightAnchor.constraint(equalTo: content.rightAnchor, constant: 24).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: content.bottomAnchor, constant: 56).isActive = true
+
+        icon.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        icon.heightAnchor.constraint(equalToConstant: 39).isActive = true
+        icon.topAnchor.constraint(equalTo: iconContainer.topAnchor).isActive = true
+        icon.bottomAnchor.constraint(equalTo: iconContainer.bottomAnchor, constant: -20).isActive = true
     }
 }

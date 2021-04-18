@@ -1,5 +1,5 @@
 extension Button {
-    struct Model {
+    public struct Model {
         let title: String
         let action: () -> Void
     }

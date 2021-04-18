@@ -1,8 +1,12 @@
 import UIKit
 
-final class Button: UIView {
+public final class Button: UIView {
+    // MARK: - Properties
+
     private let button = UIButton()
     private var model: Model?
+
+    // MARK: - Initialization
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -15,12 +19,15 @@ final class Button: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func update(with model: Model) {
+    // MARK: - Public
+
+    public func update(with model: Model) {
         button.setTitle(model.title, for: .normal)
         button.addTarget(self, action: #selector(tapped), for: .touchUpInside)
     }
 }
 
+// MARK: - Private
 private extension Button {
     func setupViews() {
         layer.cornerRadius = 8
