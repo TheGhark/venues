@@ -43,6 +43,9 @@
 		7A9A0B98262B62E100E66262 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A9A0B92262B62CA00E66262 /* Colors.xcassets */; };
 		7A9A0BA0262C43BB00E66262 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0B9F262C43BB00E66262 /* Color.swift */; };
 		7A9A0BAA262C44A200E66262 /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0BA9262C44A200E66262 /* Separator.swift */; };
+		7A9A0BB0262C45FC00E66262 /* Inidicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0BAF262C45FC00E66262 /* Inidicator.swift */; };
+		7A9A0BB6262C466500E66262 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0BB5262C466500E66262 /* Badge.swift */; };
+		7A9A0BBF262C48FA00E66262 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0BBE262C48FA00E66262 /* Block.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +137,9 @@
 		7A9A0B92262B62CA00E66262 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		7A9A0B9F262C43BB00E66262 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		7A9A0BA9262C44A200E66262 /* Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
+		7A9A0BAF262C45FC00E66262 /* Inidicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inidicator.swift; sourceTree = "<group>"; };
+		7A9A0BB5262C466500E66262 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		7A9A0BBE262C48FA00E66262 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -398,6 +404,9 @@
 		7A9A0BA7262C448900E66262 /* Atoms */ = {
 			isa = PBXGroup;
 			children = (
+				7A9A0BBD262C48F400E66262 /* Block */,
+				7A9A0BB4262C465F00E66262 /* Badge */,
+				7A9A0BAE262C45F400E66262 /* Indicator */,
 				7A9A0BA8262C448F00E66262 /* Separator */,
 			);
 			path = Atoms;
@@ -409,6 +418,30 @@
 				7A9A0BA9262C44A200E66262 /* Separator.swift */,
 			);
 			path = Separator;
+			sourceTree = "<group>";
+		};
+		7A9A0BAE262C45F400E66262 /* Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				7A9A0BAF262C45FC00E66262 /* Inidicator.swift */,
+			);
+			path = Indicator;
+			sourceTree = "<group>";
+		};
+		7A9A0BB4262C465F00E66262 /* Badge */ = {
+			isa = PBXGroup;
+			children = (
+				7A9A0BB5262C466500E66262 /* Badge.swift */,
+			);
+			path = Badge;
+			sourceTree = "<group>";
+		};
+		7A9A0BBD262C48F400E66262 /* Block */ = {
+			isa = PBXGroup;
+			children = (
+				7A9A0BBE262C48FA00E66262 /* Block.swift */,
+			);
+			path = Block;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -619,12 +652,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A9A0B8B262B622A00E66262 /* VenuCell+Model.swift in Sources */,
+				7A9A0BB0262C45FC00E66262 /* Inidicator.swift in Sources */,
+				7A9A0BB6262C466500E66262 /* Badge.swift in Sources */,
 				7A9A0B8A262B622A00E66262 /* WarningCell.swift in Sources */,
 				7A9A0B88262B622A00E66262 /* WarningCell+Model.swift in Sources */,
 				7A9A0B87262B622A00E66262 /* LoadingCell.swift in Sources */,
 				7A9A0B7B262B622000E66262 /* LoadingCell+Model.swift in Sources */,
 				7A9A0BA0262C43BB00E66262 /* Color.swift in Sources */,
 				7A9A0B6E262B612200E66262 /* ComponentModel.swift in Sources */,
+				7A9A0BBF262C48FA00E66262 /* Block.swift in Sources */,
 				7A9A0B89262B622A00E66262 /* VenueCell.swift in Sources */,
 				7A9A0BAA262C44A200E66262 /* Separator.swift in Sources */,
 			);
