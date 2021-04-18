@@ -41,7 +41,7 @@ extension VenuesApiService: VenuesApiServiceProtocol {
         }
 
         var request = URLRequest(url: url)
-        request.addValue(secretKey,forHTTPHeaderField: "secret-key")
+        request.addValue(secretKey, forHTTPHeaderField: "secret-key")
         session.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))

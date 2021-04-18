@@ -26,6 +26,7 @@ private extension Badge {
         layer.masksToBounds = true
 
         label.textColor = .white
+        label.font = Font.medium.size(13)
         label.numberOfLines = 1
     }
 

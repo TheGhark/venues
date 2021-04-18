@@ -15,6 +15,7 @@
 		7A29AA9D262C633D006A52D7 /* SFCompactDisplay-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A29AA9B262C633D006A52D7 /* SFCompactDisplay-Regular.otf */; };
 		7A29AA9E262C633D006A52D7 /* SFCompactDisplay-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A29AA9C262C633D006A52D7 /* SFCompactDisplay-Medium.otf */; };
 		7A29AAA3262C6388006A52D7 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A29AAA2262C6388006A52D7 /* Font.swift */; };
+		7A29AAA9262C7112006A52D7 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A29AAA8262C7112006A52D7 /* ImageDownloader.swift */; };
 		7A9A082A262B0D0D00E66262 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0829262B0D0D00E66262 /* AppDelegate.swift */; };
 		7A9A082E262B0D0D00E66262 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A082D262B0D0D00E66262 /* ViewController.swift */; };
 		7A9A0833262B0D0E00E66262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A9A0832262B0D0E00E66262 /* Assets.xcassets */; };
@@ -114,6 +115,7 @@
 		7A29AA9B262C633D006A52D7 /* SFCompactDisplay-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Regular.otf"; sourceTree = "<group>"; };
 		7A29AA9C262C633D006A52D7 /* SFCompactDisplay-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Medium.otf"; sourceTree = "<group>"; };
 		7A29AAA2262C6388006A52D7 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		7A29AAA8262C7112006A52D7 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		7A9A0826262B0D0D00E66262 /* Venues.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Venues.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A9A0829262B0D0D00E66262 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A9A082D262B0D0D00E66262 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +226,14 @@
 				7A29AA9B262C633D006A52D7 /* SFCompactDisplay-Regular.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		7A29AAA7262C710A006A52D7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7A29AAA8262C7112006A52D7 /* ImageDownloader.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		7A9A081D262B0D0D00E66262 = {
@@ -424,6 +434,7 @@
 		7A9A0B4A262B60D000E66262 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				7A29AAA7262C710A006A52D7 /* Helpers */,
 				7A29AA7F262C5A52006A52D7 /* Button */,
 				7A29AA79262C5934006A52D7 /* SectionHeader */,
 				7A9A0BC3262C4B0E00E66262 /* TabBar */,
@@ -736,6 +747,7 @@
 				7A9A0BB0262C45FC00E66262 /* Inidicator.swift in Sources */,
 				7A9A0BB6262C466500E66262 /* Badge.swift in Sources */,
 				7A9A0B8A262B622A00E66262 /* WarningCell.swift in Sources */,
+				7A29AAA9262C7112006A52D7 /* ImageDownloader.swift in Sources */,
 				7A9A0B88262B622A00E66262 /* WarningCell+Model.swift in Sources */,
 				7A9A0B87262B622A00E66262 /* LoadingCell.swift in Sources */,
 				7A29AA81262C5A5A006A52D7 /* Button.swift in Sources */,
