@@ -11,7 +11,7 @@ protocol VenuesModelFactoryProtocol {
 
 final class VenuesModelFactory {
     // MARK: - Properties
-    
+
     private let dateFormatter: DateFormatter
 
     init(dateFormatter: DateFormatter = .init()) {
@@ -21,7 +21,7 @@ final class VenuesModelFactory {
 
 private extension VenuesModelFactory {
     func timeslot(from start: Date?, to end: Date?) -> String {
-        guard  let start = start, let end = end else {
+        guard let start = start, let end = end else {
             return ""
         }
         dateFormatter.dateStyle = .none
@@ -55,7 +55,7 @@ private extension VenuesModelFactory {
             )
         }
     }
-    
+
     func buttonModel(
         with type: WarningCell.Model.WarningType,
         action: (() -> Void)?
@@ -82,11 +82,11 @@ extension VenuesModelFactory: VenuesModelFactoryProtocol {
             buttonModel: buttonModel(with: type, action: action)
         )
     }
-    
+
     func loadingModel() -> LoadingCell.Model {
         .init(icon: Icon.camera)
     }
-    
+
     func venueModel(with venue: Venue) -> VenueCell.Model {
         .init(
             imageUrl: venue.imageUrl,

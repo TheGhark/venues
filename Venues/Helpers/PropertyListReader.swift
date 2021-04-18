@@ -17,7 +17,7 @@ final class PropertyListReader {
 }
 
 extension PropertyListReader: PropertyListReaderProtocol {
-    func read() -> [String : String]? {
+    func read() -> [String: String]? {
         guard
             let path = Bundle.main.path(forResource: filename, ofType: "plist"),
             let contents = FileManager.default.contents(atPath: path)

@@ -40,21 +40,21 @@ private extension VenuesViewModel {
                     .init(
                         title: Localization.Tabbar.Button.upcoming,
                         selected: isTabSelected(index: 0)
-                    ) { [weak self] model in
+                    ) { [weak self] _ in
                         self?.select(tab: 0)
                         self?.fetch()
                     },
                     .init(
                         title: Localization.Tabbar.Button.archived,
                         selected: isTabSelected(index: 1)
-                    ) {[weak self] model in
+                    ) { [weak self] _ in
                         self?.select(tab: 1)
                         self?.delegate?.reload()
                     },
                     .init(
                         title: Localization.Tabbar.Button.options,
                         selected: isTabSelected(index: 2)
-                    ) { [weak self] model in
+                    ) { [weak self] _ in
                         self?.select(tab: 2)
                         self?.delegate?.reload()
                     }
@@ -75,10 +75,10 @@ private extension VenuesViewModel {
                 ),
                 .loading(
                     models:
-                        [
-                            modelFactory.loadingModel(),
-                            modelFactory.loadingModel()
-                        ]
+                    [
+                        modelFactory.loadingModel(),
+                        modelFactory.loadingModel()
+                    ]
                 )
             ]
         } else {
@@ -103,10 +103,10 @@ private extension VenuesViewModel {
             ),
             .loading(
                 models:
-                    [
-                        modelFactory.loadingModel(),
-                        modelFactory.loadingModel()
-                    ]
+                [
+                    modelFactory.loadingModel(),
+                    modelFactory.loadingModel()
+                ]
             )
         ]
         delegate?.reload()
@@ -136,11 +136,12 @@ private extension VenuesViewModel {
 }
 
 // MARK: - TableViewDataSourceProtocol
+
 extension VenuesViewModel: TableViewDataSourceProtocol {
     var numberOfSections: Int {
         sections.count
     }
-    
+
     func numberOfItems(at section: Int) -> Int {
         let section = sections[section]
 
@@ -153,7 +154,7 @@ extension VenuesViewModel: TableViewDataSourceProtocol {
             return models.count
         }
     }
-    
+
     func model(at indexPath: IndexPath) -> ComponentModel {
         let section = sections[indexPath.section]
 
@@ -169,6 +170,7 @@ extension VenuesViewModel: TableViewDataSourceProtocol {
 }
 
 // MARK: - LifecycleStateObservable
+
 extension VenuesViewModel: LifecycleStateObservable {
     func didChange(state: LifecycleState) {
         switch state {

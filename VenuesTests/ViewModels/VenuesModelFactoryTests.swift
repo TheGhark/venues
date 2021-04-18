@@ -59,7 +59,7 @@ final class VenuesModelFactoryTests: XCTestCase {
         dateFormatter.timeStyle = .short
         XCTAssertEqual(
             model.timeslot,
-            "\(dateFormatter.string(from: start)) - \(dateFormatter.string(from: end))"
+            "\(dateFormatter.string(from: start)) — \(dateFormatter.string(from: end))"
         )
     }
 }

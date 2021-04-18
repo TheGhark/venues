@@ -10,6 +10,7 @@ final class VenuesApiService {
         case noData
         case noConnection
     }
+
     // MARK: - Properties
 
     private let session: URLSession
@@ -42,7 +43,7 @@ extension VenuesApiService: VenuesApiServiceProtocol {
 
         var request = URLRequest(url: url)
         request.addValue(secretKey, forHTTPHeaderField: "secret-key")
-        let task = session.dataTask(with: request) { (data, response, error) in
+        let task = session.dataTask(with: request) { data, _, error in
             if let error = error {
                 if (error as NSError).code == -1009 {
                     completion(.failure(Error.noConnection))

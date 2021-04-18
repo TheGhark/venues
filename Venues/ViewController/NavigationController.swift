@@ -7,12 +7,13 @@ final class NavigationController: UINavigationController {
         navigationBar.backgroundColor = Color.background
         navigationBar.isTranslucent = false
     }
-    
+
+    @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
 private extension NavigationController {
-    @objc func closeButtonTapped() { }
+    @objc func closeButtonTapped() {}
 }

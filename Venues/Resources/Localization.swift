@@ -5,12 +5,14 @@ enum Localization {
         /// SpeedRoomating
         static let title = localized("app.title")
     }
+
     enum Common {
         enum Action {
             /// Retry
             static let retry = localized("common.action.retry")
         }
     }
+
     enum Tabbar {
         enum Button {
             static let archived = localized("tabbar.button.archived")
@@ -18,15 +20,18 @@ enum Localization {
             static let upcoming = localized("tabbar.button.upcoming")
         }
     }
+
     enum Warning {
         enum Empty {
             static let subtitle = localized("warning.empty.subtitle")
             static let title = localized("warning.empty.title")
         }
+
         enum Error {
             static let subtitle = localized("warning.error.subtitle")
             static let title = localized("warning.error.title")
         }
+
         enum Offline {
             static let subtitle = localized("warning.offline.subtitle")
             static let title = localized("warning.offline.title")
