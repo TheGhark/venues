@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A29AA7B262C593F006A52D7 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A29AA7A262C593F006A52D7 /* SectionHeader.swift */; };
+		7A29AA81262C5A5A006A52D7 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A29AA80262C5A5A006A52D7 /* Button.swift */; };
+		7A29AA86262C5AE3006A52D7 /* Button+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A29AA85262C5AE3006A52D7 /* Button+Model.swift */; };
 		7A9A082A262B0D0D00E66262 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0829262B0D0D00E66262 /* AppDelegate.swift */; };
 		7A9A082E262B0D0D00E66262 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A082D262B0D0D00E66262 /* ViewController.swift */; };
 		7A9A0833262B0D0E00E66262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A9A0832262B0D0E00E66262 /* Assets.xcassets */; };
@@ -46,6 +49,10 @@
 		7A9A0BB0262C45FC00E66262 /* Inidicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0BAF262C45FC00E66262 /* Inidicator.swift */; };
 		7A9A0BB6262C466500E66262 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0BB5262C466500E66262 /* Badge.swift */; };
 		7A9A0BBF262C48FA00E66262 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0BBE262C48FA00E66262 /* Block.swift */; };
+		7A9A0BC5262C4B1E00E66262 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0BC4262C4B1E00E66262 /* TabBar.swift */; };
+		7A9A0BCA262C4B5F00E66262 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0BC9262C4B5F00E66262 /* TabBarButton.swift */; };
+		7A9A0BCF262C4CF100E66262 /* TabBar+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0BCE262C4CF100E66262 /* TabBar+Model.swift */; };
+		7A9A0BD4262C4D2000E66262 /* TabBarButton+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0BD3262C4D2000E66262 /* TabBarButton+Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +101,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7A29AA7A262C593F006A52D7 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		7A29AA80262C5A5A006A52D7 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		7A29AA85262C5AE3006A52D7 /* Button+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Model.swift"; sourceTree = "<group>"; };
 		7A9A0826262B0D0D00E66262 /* Venues.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Venues.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A9A0829262B0D0D00E66262 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A9A082D262B0D0D00E66262 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +150,10 @@
 		7A9A0BAF262C45FC00E66262 /* Inidicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inidicator.swift; sourceTree = "<group>"; };
 		7A9A0BB5262C466500E66262 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		7A9A0BBE262C48FA00E66262 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		7A9A0BC4262C4B1E00E66262 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		7A9A0BC9262C4B5F00E66262 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
+		7A9A0BCE262C4CF100E66262 /* TabBar+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBar+Model.swift"; sourceTree = "<group>"; };
+		7A9A0BD3262C4D2000E66262 /* TabBarButton+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarButton+Model.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +190,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A29AA79262C5934006A52D7 /* SectionHeader */ = {
+			isa = PBXGroup;
+			children = (
+				7A29AA7A262C593F006A52D7 /* SectionHeader.swift */,
+			);
+			path = SectionHeader;
+			sourceTree = "<group>";
+		};
+		7A29AA7F262C5A52006A52D7 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				7A29AA80262C5A5A006A52D7 /* Button.swift */,
+				7A29AA85262C5AE3006A52D7 /* Button+Model.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		7A9A081D262B0D0D00E66262 = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +405,9 @@
 		7A9A0B4A262B60D000E66262 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				7A29AA7F262C5A52006A52D7 /* Button */,
+				7A29AA79262C5934006A52D7 /* SectionHeader */,
+				7A9A0BC3262C4B0E00E66262 /* TabBar */,
 				7A9A0BA7262C448900E66262 /* Atoms */,
 				7A9A0B97262B62D800E66262 /* Resources */,
 				7A9A0AF3262B3F6B00E66262 /* Cells */,
@@ -442,6 +476,25 @@
 				7A9A0BBE262C48FA00E66262 /* Block.swift */,
 			);
 			path = Block;
+			sourceTree = "<group>";
+		};
+		7A9A0BC3262C4B0E00E66262 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				7A9A0BC4262C4B1E00E66262 /* TabBar.swift */,
+				7A9A0BCE262C4CF100E66262 /* TabBar+Model.swift */,
+				7A9A0BD8262C4D4900E66262 /* TabBatButton */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		7A9A0BD8262C4D4900E66262 /* TabBatButton */ = {
+			isa = PBXGroup;
+			children = (
+				7A9A0BC9262C4B5F00E66262 /* TabBarButton.swift */,
+				7A9A0BD3262C4D2000E66262 /* TabBarButton+Model.swift */,
+			);
+			path = TabBatButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -652,16 +705,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A9A0B8B262B622A00E66262 /* VenuCell+Model.swift in Sources */,
+				7A9A0BCF262C4CF100E66262 /* TabBar+Model.swift in Sources */,
 				7A9A0BB0262C45FC00E66262 /* Inidicator.swift in Sources */,
 				7A9A0BB6262C466500E66262 /* Badge.swift in Sources */,
 				7A9A0B8A262B622A00E66262 /* WarningCell.swift in Sources */,
 				7A9A0B88262B622A00E66262 /* WarningCell+Model.swift in Sources */,
 				7A9A0B87262B622A00E66262 /* LoadingCell.swift in Sources */,
+				7A29AA81262C5A5A006A52D7 /* Button.swift in Sources */,
+				7A9A0BD4262C4D2000E66262 /* TabBarButton+Model.swift in Sources */,
 				7A9A0B7B262B622000E66262 /* LoadingCell+Model.swift in Sources */,
 				7A9A0BA0262C43BB00E66262 /* Color.swift in Sources */,
 				7A9A0B6E262B612200E66262 /* ComponentModel.swift in Sources */,
+				7A9A0BC5262C4B1E00E66262 /* TabBar.swift in Sources */,
+				7A29AA7B262C593F006A52D7 /* SectionHeader.swift in Sources */,
 				7A9A0BBF262C48FA00E66262 /* Block.swift in Sources */,
+				7A9A0BCA262C4B5F00E66262 /* TabBarButton.swift in Sources */,
 				7A9A0B89262B622A00E66262 /* VenueCell.swift in Sources */,
+				7A29AA86262C5AE3006A52D7 /* Button+Model.swift in Sources */,
 				7A9A0BAA262C44A200E66262 /* Separator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
