@@ -12,6 +12,9 @@
 		7A29AA86262C5AE3006A52D7 /* Button+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A29AA85262C5AE3006A52D7 /* Button+Model.swift */; };
 		7A29AA8B262C5C63006A52D7 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A29AA8A262C5C63006A52D7 /* Icons.xcassets */; };
 		7A29AA90262C5D59006A52D7 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A29AA8F262C5D59006A52D7 /* Icon.swift */; };
+		7A29AA9D262C633D006A52D7 /* SFCompactDisplay-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A29AA9B262C633D006A52D7 /* SFCompactDisplay-Regular.otf */; };
+		7A29AA9E262C633D006A52D7 /* SFCompactDisplay-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A29AA9C262C633D006A52D7 /* SFCompactDisplay-Medium.otf */; };
+		7A29AAA3262C6388006A52D7 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A29AAA2262C6388006A52D7 /* Font.swift */; };
 		7A9A082A262B0D0D00E66262 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A0829262B0D0D00E66262 /* AppDelegate.swift */; };
 		7A9A082E262B0D0D00E66262 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A082D262B0D0D00E66262 /* ViewController.swift */; };
 		7A9A0833262B0D0E00E66262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A9A0832262B0D0E00E66262 /* Assets.xcassets */; };
@@ -108,6 +111,9 @@
 		7A29AA85262C5AE3006A52D7 /* Button+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Model.swift"; sourceTree = "<group>"; };
 		7A29AA8A262C5C63006A52D7 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		7A29AA8F262C5D59006A52D7 /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		7A29AA9B262C633D006A52D7 /* SFCompactDisplay-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Regular.otf"; sourceTree = "<group>"; };
+		7A29AA9C262C633D006A52D7 /* SFCompactDisplay-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Medium.otf"; sourceTree = "<group>"; };
+		7A29AAA2262C6388006A52D7 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		7A9A0826262B0D0D00E66262 /* Venues.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Venues.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A9A0829262B0D0D00E66262 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A9A082D262B0D0D00E66262 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +215,15 @@
 				7A29AA85262C5AE3006A52D7 /* Button+Model.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		7A29AA9A262C631C006A52D7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7A29AA9C262C633D006A52D7 /* SFCompactDisplay-Medium.otf */,
+				7A29AA9B262C633D006A52D7 /* SFCompactDisplay-Regular.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		7A9A081D262B0D0D00E66262 = {
@@ -433,10 +448,12 @@
 		7A9A0B97262B62D800E66262 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7A29AA9A262C631C006A52D7 /* Fonts */,
 				7A9A0B9F262C43BB00E66262 /* Color.swift */,
 				7A9A0B92262B62CA00E66262 /* Colors.xcassets */,
 				7A29AA8A262C5C63006A52D7 /* Icons.xcassets */,
 				7A29AA8F262C5D59006A52D7 /* Icon.swift */,
+				7A29AAA2262C6388006A52D7 /* Font.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -661,6 +678,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A29AA8B262C5C63006A52D7 /* Icons.xcassets in Resources */,
+				7A29AA9D262C633D006A52D7 /* SFCompactDisplay-Regular.otf in Resources */,
+				7A29AA9E262C633D006A52D7 /* SFCompactDisplay-Medium.otf in Resources */,
 				7A9A0B98262B62E100E66262 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -713,6 +732,7 @@
 			files = (
 				7A9A0B8B262B622A00E66262 /* VenuCell+Model.swift in Sources */,
 				7A9A0BCF262C4CF100E66262 /* TabBar+Model.swift in Sources */,
+				7A29AAA3262C6388006A52D7 /* Font.swift in Sources */,
 				7A9A0BB0262C45FC00E66262 /* Inidicator.swift in Sources */,
 				7A9A0BB6262C466500E66262 /* Badge.swift in Sources */,
 				7A9A0B8A262B622A00E66262 /* WarningCell.swift in Sources */,
