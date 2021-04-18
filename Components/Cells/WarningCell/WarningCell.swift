@@ -14,20 +14,21 @@ public final class WarningCell: UITableViewCell {
     private let button = Button()
 
     // MARK: - Computed Properties
-    
+
     public var type: Model.WarningType? {
         model?.type
     }
 
     // MARK: - Initialization
 
-    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
         setupHierarchy()
         setupConstraints()
     }
-    
+
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

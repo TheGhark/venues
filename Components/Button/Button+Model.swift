@@ -1,9 +1,9 @@
-extension Button {
-    public struct Model: Equatable {
-        public static func == (lhs: Button.Model, rhs: Button.Model) -> Bool {
+public extension Button {
+    struct Model: Equatable {
+        public static func ==(lhs: Button.Model, rhs: Button.Model) -> Bool {
             lhs.title == rhs.title
         }
-        
+
         let title: String
         let action: (() -> Void)?
 

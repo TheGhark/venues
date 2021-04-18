@@ -8,13 +8,14 @@ public final class LoadingCell: UITableViewCell {
     private let longBlock = Block()
     private let shortBlock = Block()
 
-    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
         setupHierarchy()
         setupConstraints()
     }
-    
+
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -58,13 +59,13 @@ private extension LoadingCell {
         shortBlock.leftAnchor.constraint(equalTo: content.leftAnchor, constant: 16).isActive = true
         shortBlock.bottomAnchor.constraint(equalTo: content.bottomAnchor, constant: -16).isActive = true
         shortBlock.heightAnchor.constraint(equalToConstant: 16).isActive = true
-        shortBlock.widthAnchor.constraint(equalToConstant: 160).isActive =  true
+        shortBlock.widthAnchor.constraint(equalToConstant: 160).isActive = true
 
         longBlock.translatesAutoresizingMaskIntoConstraints = false
         longBlock.leftAnchor.constraint(equalTo: shortBlock.leftAnchor).isActive = true
         longBlock.topAnchor.constraint(greaterThanOrEqualTo: placeholderImageView.bottomAnchor).isActive = true
         longBlock.bottomAnchor.constraint(equalTo: shortBlock.topAnchor, constant: -8).isActive = true
         longBlock.heightAnchor.constraint(equalToConstant: 16).isActive = true
-        longBlock.widthAnchor.constraint(equalToConstant: 240).isActive =  true
+        longBlock.widthAnchor.constraint(equalToConstant: 240).isActive = true
     }
 }

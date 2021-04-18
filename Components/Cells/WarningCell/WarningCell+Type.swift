@@ -1,7 +1,7 @@
 import UIKit
 
-extension WarningCell.Model {
-    public enum WarningType {
+public extension WarningCell.Model {
+    enum WarningType {
         case empty
         case noConnection
         case error

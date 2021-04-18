@@ -1,1 +1,1 @@
-public protocol ComponentModel { }
+public protocol ComponentModel {}

@@ -3,13 +3,14 @@ import UIKit
 public final class SectionHeader: UIView {
     private let label = UILabel()
 
-    public override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
         setupHierarchy()
         setupConstraints()
     }
-    
+
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

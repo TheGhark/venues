@@ -11,7 +11,7 @@ enum Font {
         case .medium:
             return UIFont(name: "SFCompactDisplay-Medium", size: size)
         }
-        
+
     }
 
 }

@@ -14,7 +14,8 @@ public final class Button: UIView {
         setupHierarchy()
         setupConstraints()
     }
-    
+
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -28,6 +29,7 @@ public final class Button: UIView {
 }
 
 // MARK: - Private
+
 private extension Button {
     func setupViews() {
         layer.cornerRadius = 8
@@ -47,7 +49,7 @@ private extension Button {
         button.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
 
-    @objc func  tapped() {
+    @objc func tapped() {
         model?.action?()
     }
 }

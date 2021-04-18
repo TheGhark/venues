@@ -14,13 +14,14 @@ public final class VenueCell: UITableViewCell {
     private let nameDateStackView = UIStackView()
     private let locationTimeStackView = UIStackView()
 
-    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
         setupHierarchy()
         setupConstraints()
     }
-    
+
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -46,16 +47,16 @@ public final class VenueCell: UITableViewCell {
 
 private extension VenueCell {
     func setupViews() {
-        name.font =  Font.medium.size(17)
+        name.font = Font.medium.size(17)
         name.textColor = .white
 
-        date.font =  Font.medium.size(17)
+        date.font = Font.medium.size(17)
         date.textColor = .white
 
-        name.font =  Font.regular.size(17)
+        name.font = Font.regular.size(17)
         location.textColor = Color.silver
 
-        time.font =  Font.regular.size(17)
+        time.font = Font.regular.size(17)
         time.textColor = Color.silver
 
         nameDateStackView.axis = .horizontal
@@ -93,7 +94,7 @@ private extension VenueCell {
         backgroundImageView.topAnchor.constraint(equalTo: content.topAnchor).isActive = true
         backgroundImageView.rightAnchor.constraint(equalTo: content.rightAnchor).isActive = true
         backgroundImageView.bottomAnchor.constraint(equalTo: content.bottomAnchor).isActive = true
-        
+
         badge.translatesAutoresizingMaskIntoConstraints = false
         badge.leftAnchor.constraint(equalTo: content.leftAnchor, constant: 12).isActive = true
         badge.topAnchor.constraint(equalTo: content.topAnchor, constant: 12).isActive = true

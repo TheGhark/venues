@@ -2,7 +2,7 @@ import SDWebImage
 import UIKit
 
 public protocol ImageDownloaderProtocol {
-    func download(url: URL?,completion: @escaping (URL?, UIImage?) -> Void)
+    func download(url: URL?, completion: @escaping (URL?, UIImage?) -> Void)
 }
 
 public final class ImageDownloader {
@@ -23,7 +23,7 @@ extension ImageDownloader: ImageDownloaderProtocol {
             with: url,
             options: SDWebImageDownloaderOptions.continueInBackground,
             progress: nil
-        ) { (image, _, _, _) in
+        ) { image, _, _, _ in
             completion(url, image)
         }
     }
