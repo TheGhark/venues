@@ -14,6 +14,7 @@ extension Venue {
             imageUrl: URL(string: imageUrl),
             cost: cost,
             location: location,
+            date: startTime,
             name: name,
             startTime: startTime,
             endTime: endTime

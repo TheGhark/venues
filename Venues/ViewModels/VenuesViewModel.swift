@@ -36,7 +36,11 @@ private extension VenuesViewModel {
         }
         if venues.isEmpty {
             sections = [
-                .warning(type: modelFactory.warningModel(type: .empty)),
+                .warning(
+                    type: modelFactory.warningModel(type: .empty) { [weak self] in
+                        self?.fetch()
+                    }
+                ),
                 .loading(
                     models:
                         [
@@ -60,7 +64,11 @@ private extension VenuesViewModel {
             warningType = .error
         }
         sections = [
-            .warning(type: modelFactory.warningModel(type: warningType)),
+            .warning(
+                type: modelFactory.warningModel(type: warningType) { [weak self] in
+                    self?.fetch()
+                }
+            ),
             .loading(
                 models:
                     [
@@ -70,6 +78,18 @@ private extension VenuesViewModel {
             )
         ]
         delegate?.reload()
+    }
+
+    func fetch() {
+        venuesRepository.fetchVenues { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case let .success(venues):
+                self.createSections(with: venues)
+            case let .failure(error):
+                self.handle(error: error)
+            }
+        }
     }
 }
 
@@ -122,15 +142,7 @@ extension VenuesViewModel: LifecycleStateObservable {
             ]
             delegate?.reload()
         case .willAppear:
-            venuesRepository.fetchVenues { [weak self] result in
-                guard let self = self else { return }
-                switch result {
-                case let .success(venues):
-                    self.createSections(with: venues)
-                case let .failure(error):
-                    self.handle(error: error)
-                }
-            }
+            fetch()
         case .didAppear, .willDisappear, .didDisappear:
             break
         }

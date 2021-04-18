@@ -5,25 +5,25 @@ public protocol ImageDownloaderProtocol {
     func download(completion: @escaping (UIImage?) -> Void)
 }
 
-final class ImageDownloader {
+public final class ImageDownloader {
     // MARK: - Properties
 
-    let url: URL?
+    public let url: URL?
     private let session: URLSession
 
     // MARK: - Initialization
 
-    init(
+    public init(
         session: URLSession = .shared,
         url: URL?
-        ) {
+    ) {
         self.session = session
         self.url = url
     }
 }
 
 extension ImageDownloader: ImageDownloaderProtocol {
-    func download(completion: @escaping (UIImage?) -> Void) {
+    public func download(completion: @escaping (UIImage?) -> Void) {
         guard let url = url else {
             completion(nil)
             return

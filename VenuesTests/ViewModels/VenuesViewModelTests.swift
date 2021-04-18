@@ -72,17 +72,19 @@ final class VenuesViewModelTests: XCTestCase {
 
     func test_model_warning_error() throws {
         venuesRepository.fetchVenuesMockFunc.returns(.failure(VenuesApiService.Error.noData))
-        try assert(warning: WarningCell.Model(type: .error))
+        try assert(warning: WarningCell.Model(type: .error, title: "title", subtitle: "subtitle", buttonModel: nil))
     }
 
     func test_model_warning_empty() throws {
         venuesRepository.fetchVenuesMockFunc.returns(.success([]))
-        try assert(warning: WarningCell.Model(type: .empty))
+        try assert(warning: WarningCell.Model(type: .empty, title: "title", subtitle: "subtitle", buttonModel: nil))
     }
 
     func test_model_warning_noConnection() throws {
         venuesRepository.fetchVenuesMockFunc.returns(.failure(VenuesApiService.Error.noConnection))
-        try assert(warning: WarningCell.Model(type: .noConnection))
+        try assert(
+            warning: WarningCell.Model(type: .noConnection, title: "title", subtitle: "subtitle", buttonModel: nil)
+        )
     }
 
     func test_model_loading() throws {

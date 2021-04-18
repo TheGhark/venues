@@ -1,0 +1,11 @@
+"app.title" = "SpeedRoommating";
+"common.action.retry" = "Retry";
+"tabbar.button.archived" = "Archived";
+"tabbar.button.options" = "Options";
+"tabbar.button.upcoming" = "Upcoming";
+"warning.empty.subtitle" = "No upcoming events are scheduled. If this is incorrect, get in touch with our CORE team.";
+"warning.empty.title" = "Nothing to show";
+"warning.error.subtitle" = "We couldn't load the upcoming events. Check your cellular or wifi connection and try again.";
+"warning.error.title" = "Something's gone wrong";
+"warning.offline.subtitle" = "You appear to be offline. Check your mobile or wifi connection and try again.";
+"warning.offline.title" = "No connection";

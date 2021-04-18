@@ -26,6 +26,7 @@ extension VenueDto {
             imageUrl: URL(string: imageUrl),
             cost: cost,
             location: location,
+            date: dateFormatter.date(from: startTime),
             name: name,
             startTime: dateFormatter.date(from: startTime),
             endTime: dateFormatter.date(from: endTime)

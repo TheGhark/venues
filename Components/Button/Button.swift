@@ -48,6 +48,6 @@ private extension Button {
     }
 
     @objc func  tapped() {
-        model?.action()
+        model?.action?()
     }
 }
