@@ -1,5 +1,9 @@
 public extension LoadingCell {
     struct Model: ComponentModel {
-        public init() { }
+        let icon: Icon
+    
+        public init(icon: Icon) {
+            self.icon = icon
+        }
     }
 }
